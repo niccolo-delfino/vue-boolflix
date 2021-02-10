@@ -21,6 +21,15 @@
         <button type="button" name="button" v-model="query" @click="search">Cerca!</button>
     </header>
 
+    <main>
+      <div class="all-movies">
+        <div class="movie" v-for="film in films">
+
+          <h2>{{film.title}}</h2>
+        </div>
+      </div>
+    </main>
+
   </div>
 
   <script src="js/script.js" charset="utf-8"></script>

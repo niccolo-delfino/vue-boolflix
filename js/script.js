@@ -3,7 +3,8 @@ var app = new Vue({
   data: {
     query:'',
     apiKey: 'ebe10cc264f177fa09506aa0e10c3287',
-    lang: 'it-IT'
+    lang: 'it-IT',
+    films:[]
   },
   mounted(){
 
@@ -21,7 +22,8 @@ var app = new Vue({
         }
       })
       .then((result) =>{
-        console.log(result.data);
+        this.films = result.data.results;
+        console.log(this.films);
       })
     }
     // FINE RICERCA
