@@ -17,8 +17,8 @@
 
   <div id="app" class="container">
     <header>
-        <input type="text" placeholder="Cerca il tuo film o la tu serie TV">
-        <button type="button" name="button">Cerca!</button>
+        <input type="text" v-model="query" @keyup.enter="search" placeholder="Cerca il tuo film o la tu serie TV">
+        <button type="button" name="button" v-model="query" @click="search">Cerca!</button>
     </header>
 
   </div>
