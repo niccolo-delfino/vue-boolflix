@@ -24,21 +24,29 @@
     <main>
       <div class="all-movies">
         <div class="movie" v-for="film in films">
+          <div class="poster">
           <!-- <img v-if="film.poster_path === 'null'" src="https://www.altavod.com/assets/images/poster-placeholder.png" alt="Locandina Film"> -->
           <img :src="'https://image.tmdb.org/t/p/'+'w342'+ film.poster_path" alt="Locandina Film">
+          </div>
           <h2>{{film.title}}</h2>
           <h3>{{film.original_title}}</h3>
+          <div class="language">
           <img :src="'img/' + film.original_language + '.png'" alt="language">
           <!-- <h3>{{film.original_language}}</h3> -->
+          </div>
           <h3>{{film.vote_average}}</h3>
           <h3>FILM</h3>
         </div>
         <div class="movie" v-for="serie in tv">
+          <div class="poster">
           <img :src="'https://image.tmdb.org/t/p/'+'w342'+ serie.poster_path" alt="Locandina Tv">
+          </div>
           <h2>{{serie.name}}</h2>
           <h3>{{serie.original_name}}</h3>
+          <div class="language">
           <img :src="'img/' + serie.original_language + '.png'" alt="language">
           <!-- <h3>{{serie.original_language}}</h3> -->
+          </div>
           <h3>{{serie.vote_average}}</h3>
           <h3>SERIE TV</h3>
         </div>
