@@ -8,6 +8,7 @@ var app = new Vue({
     tv:[],
     voteFilms: [],
     voteTv: [],
+    prova: 0,
   },
   mounted(){
 
@@ -35,6 +36,10 @@ var app = new Vue({
           this.voteFilms.push(Math.ceil(this.films[i].vote_average / 2))
         }
         console.log(this.voteFilms);
+        for (var i = 0; i < this.voteFilms.length; i++) {
+          this.prova = this.voteFilms[i];
+          console.log(this.prova);
+        }
       })
     },
     searchTv(){

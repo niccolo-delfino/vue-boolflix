@@ -34,6 +34,9 @@
           <img :src="'img/' + film.original_language + '.png'" alt="language">
           <!-- <h3>{{film.original_language}}</h3> -->
           </div>
+          <div class="star">
+            <div class="star-full" v-for="stella in prova"><i class="fas fa-star"></i></div>
+          </div>
           <h3>{{film.vote_average}}</h3>
           <h3>FILM</h3>
         </div>
