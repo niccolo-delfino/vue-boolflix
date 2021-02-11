@@ -6,9 +6,9 @@ var app = new Vue({
     lang: 'it-IT',
     films:[],
     tv:[],
-    voteFilms: [],
-    voteTv: [],
-    prova: 0,
+    // voteFilms: [],
+    // voteTv: [],
+    // prova: 0,
   },
   mounted(){
 
@@ -32,14 +32,14 @@ var app = new Vue({
       .then((result) =>{
         this.films = result.data.results;
         console.log(this.films);
-        for (var i = 0; i < this.films.length; i++) {
-          this.voteFilms.push(Math.ceil(this.films[i].vote_average / 2))
-        }
-        console.log(this.voteFilms);
-        for (var i = 0; i < this.voteFilms.length; i++) {
-          this.prova = this.voteFilms[i];
-          console.log(this.prova);
-        }
+        // for (var i = 0; i < this.films.length; i++) {
+        //   this.voteFilms.push(Math.ceil(this.films[i].vote_average / 2))
+        // }
+        // console.log(this.voteFilms);
+        // for (var i = 0; i < this.voteFilms.length; i++) {
+        //   this.prova = this.voteFilms[i];
+        //   console.log(this.prova);
+        // }
       })
     },
     searchTv(){
@@ -54,13 +54,15 @@ var app = new Vue({
       .then((result) =>{
         this.tv = result.data.results;
         console.log(this.tv);
-        for (var i = 0; i < this.tv.length; i++) {
-          this.voteTv.push(Math.ceil(this.tv[i].vote_average / 2))
-        }
-        console.log(this.voteTv);
+        // for (var i = 0; i < this.tv.length; i++) {
+        //   this.voteTv.push(Math.ceil(this.tv[i].vote_average / 2))
+        // }
+        // console.log(this.voteTv);
       })
     },
     // FINE RICERCA
-
+    voto(prova){
+      return Math.ceil(prova / 2)
+    }
   }
 });
