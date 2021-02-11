@@ -5,7 +5,9 @@ var app = new Vue({
     apiKey: 'ebe10cc264f177fa09506aa0e10c3287',
     lang: 'it-IT',
     films:[],
-    tv:[]
+    tv:[],
+    voteFilms: [],
+    voteTv: [],
   },
   mounted(){
 
@@ -29,6 +31,10 @@ var app = new Vue({
       .then((result) =>{
         this.films = result.data.results;
         console.log(this.films);
+        for (var i = 0; i < this.films.length; i++) {
+          this.voteFilms.push(Math.ceil(this.films[i].vote_average / 2))
+        }
+        console.log(this.voteFilms);
       })
     },
     searchTv(){
@@ -43,8 +49,13 @@ var app = new Vue({
       .then((result) =>{
         this.tv = result.data.results;
         console.log(this.tv);
+        for (var i = 0; i < this.tv.length; i++) {
+          this.voteTv.push(Math.ceil(this.tv[i].vote_average / 2))
+        }
+        console.log(this.voteTv);
       })
-    }
+    },
     // FINE RICERCA
+
   }
 });
