@@ -4,11 +4,10 @@ var app = new Vue({
     query:'',
     apiKey: 'ebe10cc264f177fa09506aa0e10c3287',
     lang: 'it-IT',
-    films:[],
-    tv:[],
-    // voteFilms: [],
-    // voteTv: [],
-    // prova: 0,
+    obj:[],
+    // films:[],
+    // tv:[],
+
   },
   mounted(){
 
@@ -30,16 +29,9 @@ var app = new Vue({
         }
       })
       .then((result) =>{
-        this.films = result.data.results;
-        console.log(this.films);
-        // for (var i = 0; i < this.films.length; i++) {
-        //   this.voteFilms.push(Math.ceil(this.films[i].vote_average / 2))
-        // }
-        // console.log(this.voteFilms);
-        // for (var i = 0; i < this.voteFilms.length; i++) {
-        //   this.prova = this.voteFilms[i];
-        //   console.log(this.prova);
-        // }
+        this.obj = result.data.results;
+        console.log(this.obj);
+
       })
     },
     searchTv(){
@@ -52,12 +44,9 @@ var app = new Vue({
         }
       })
       .then((result) =>{
-        this.tv = result.data.results;
-        console.log(this.tv);
-        // for (var i = 0; i < this.tv.length; i++) {
-        //   this.voteTv.push(Math.ceil(this.tv[i].vote_average / 2))
-        // }
-        // console.log(this.voteTv);
+        this.obj = result.data.results;
+        console.log(this.obj);
+
       })
     },
     // FINE RICERCA
