@@ -15,10 +15,17 @@
 </head>
 <body>
 
-  <div id="app" class="container">
-    <header>
-        <input type="text" v-model="query" @keyup.enter="search" placeholder="Cerca il tuo film o la tu serie TV">
-        <button type="button" name="button" v-model="query" @click="search">Cerca!</button>
+  <div id="app">
+    <header class="up">
+      <div class="container">
+        <div class="logo">
+          <img src="img/willoflix.png" alt="Logo">
+        </div>
+        <div class="search">
+          <input type="text" v-model="query" @keyup.enter="search" placeholder="Cerca il tuo film o la tu serie TV">
+          <button type="button" name="button" v-model="query" @click="search">Cerca!</button>
+        </div>
+      </div>
     </header>
 
     <main>
@@ -28,8 +35,8 @@
           <img v-if="oggetto.poster_path === null" src="https://www.altavod.com/assets/images/poster-placeholder.png" alt="Locandina Film">
           <img v-else :src="'https://image.tmdb.org/t/p/'+'w342'+ oggetto.poster_path" alt="Locandina Film">
           </div>
-          <h2>{{oggetto.title || oggetto.name}}</h2>
-          <h3>{{oggetto.original_title || serie.original_name}}</h3>
+          <p class="f-20 bold">{{oggetto.title || oggetto.name}}</p>
+          <p class="f-15">{{oggetto.original_title || serie.original_name}}</h3>
           <div class="language">
           <img :src="'img/' + oggetto.original_language + '.png'" alt="language">
           <!-- <h3>{{oggetto.original_language}}</h3> -->
