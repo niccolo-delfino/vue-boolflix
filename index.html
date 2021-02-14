@@ -18,7 +18,7 @@
   <div id="app">
     <header class="up">
       <div class="container">
-        <div class="logo">
+        <div class="logo" @click="home">
           <img src="img/willoflix.png" alt="Logo">
         </div>
         <div class="search">
@@ -45,6 +45,7 @@
             <div class="star-full" v-for="stella in voto(oggetto.vote_average)"><i class="fas fa-star"></i></div>
             <div class="star-empty" v-for="stella in 5-voto(oggetto.vote_average)"><i class="far fa-star"></i></div>
           </div>
+          <div class="prova"></div>
           <!-- <h3>FILM</h3> -->
         </div>
         <!-- <div class="movie" v-for="serie in tv">

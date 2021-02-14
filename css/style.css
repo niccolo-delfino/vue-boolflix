@@ -44,6 +44,10 @@ header .container{
   align-items: center;
 }
 
+header .logo:hover{
+  cursor: pointer;
+}
+
 header .logo img{
   height: 70px;
 }
@@ -66,6 +70,22 @@ header .logo img{
   text-align: center;
   color: white;
   background-color: #141414;
+  position: relative;
+}
+
+.prova{
+  display: none;
+  width: 250px;
+  height: 500px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: pink;
+}
+
+.movie:hover .prova{
+  display: block;
+  cursor: pointer;
 }
 
 .movie .poster{

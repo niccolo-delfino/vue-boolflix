@@ -52,6 +52,9 @@ var app = new Vue({
     // FINE RICERCA
     voto(prova){
       return Math.ceil(prova / 2)
+    },
+    home(){
+      this.obj.splice(0,this.obj.length);
     }
   }
 });
