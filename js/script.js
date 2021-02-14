@@ -5,9 +5,6 @@ var app = new Vue({
     apiKey: 'ebe10cc264f177fa09506aa0e10c3287',
     lang: 'it-IT',
     obj:[],
-    // films:[],
-    // tv:[],
-
   },
   mounted(){
 
@@ -30,8 +27,6 @@ var app = new Vue({
       })
       .then((result) =>{
         this.obj = result.data.results;
-        console.log(this.obj);
-
       })
     },
     searchTv(){
@@ -44,9 +39,8 @@ var app = new Vue({
         }
       })
       .then((result) =>{
-        this.obj = result.data.results;
+        this.obj = this.obj.concat(result.data.results);
         console.log(this.obj);
-
       })
     },
     // FINE RICERCA
