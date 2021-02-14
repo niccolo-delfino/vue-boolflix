@@ -4,7 +4,7 @@ var app = new Vue({
     query:'',
     apiKey: 'ebe10cc264f177fa09506aa0e10c3287',
     lang: 'it-IT',
-    obj:[],
+    obj:[]
   },
   mounted(){
 
@@ -27,6 +27,24 @@ var app = new Vue({
       })
       .then((result) =>{
         this.obj = result.data.results;
+        // this.obj.forEach((element, index) => {
+        //   element.cast = '';
+        //   axios
+        //   .get('https://api.themoviedb.org/3/movie/' + element.id + '/credits',{
+        //     params: {
+        //       language: this.lang,
+        //       api_key: this.apiKey,
+        //     }
+        //   })
+        //   .then((result) =>{
+        //     for (var i = 0; i < 5; i++) {
+        //       element.cast += result.data.cast[i].name;
+        //       console.log(this.obj);
+        //     }
+        //   })
+        //
+        // });
+
       })
     },
     searchTv(){
@@ -40,7 +58,24 @@ var app = new Vue({
       })
       .then((result) =>{
         this.obj = this.obj.concat(result.data.results);
-        console.log(this.obj);
+        // this.obj.forEach((element, index) => {
+        //   element.cast = '';
+        //   axios
+        //   .get('https://api.themoviedb.org/3/tv/' + element.id + '/credits',{
+        //     params: {
+        //       language: this.lang,
+        //       api_key: this.apiKey,
+        //     }
+        //   })
+        //   .then((result) =>{
+        //     for (var i = 0; i < 5; i++) {
+        //       element.cast += result.data.cast[i].name;
+        //       console.log(this.obj);
+        //     }
+        //   })
+        //
+        // });
+
       })
     },
     // FINE RICERCA
