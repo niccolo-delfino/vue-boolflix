@@ -6,6 +6,7 @@
 
 body{
   background-color: #2d2c2c;
+  font-family: 'Roboto', sans-serif;
 }
 
 .container {
@@ -14,6 +15,10 @@ body{
 }
 
 /* WRITING */
+.f-30{
+  font-size: 30px;
+}
+
 .f-20{
   font-size: 20px;
 }
@@ -28,6 +33,10 @@ body{
 
 .bold{
   font-weight: bold;
+}
+
+.c-white{
+  color: white;
 }
 
 /* HEADER */
@@ -52,6 +61,20 @@ header .logo img{
   height: 70px;
 }
 
+header i{
+  padding-right: 10px;
+  vertical-align: middle;
+}
+
+header i:hover{
+  cursor: pointer;
+}
+
+header input{
+  width: 300px;
+  height: 30px;
+}
+
 /* MOVIES */
 .all-movies{
   display: flex;
@@ -60,38 +83,34 @@ header .logo img{
 }
 
 .movie{
-  width: 250px;
-  height: 500px;
+  width: 300px;
   margin: 20px 0;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
   color: white;
-  background-color: #141414;
+  border: 1px solid white;
   position: relative;
 }
 
-.prova{
+.card{
   display: none;
-  width: 250px;
-  height: 500px;
+  width: 300px;
+  height: 450px;
+  padding: 20px 10px;
   position: absolute;
-  top: 0;
-  left: 0;
-  background-color: pink;
+  top: -1px;
+  left: -1px;
+  border: 1px solid white;
+  background-color: #141414;
 }
 
-.movie:hover .prova{
+.movie:hover .card{
   display: block;
   cursor: pointer;
 }
 
 .movie .poster{
-  width: 75%;
+  width: 100%;
   display: flex;
-  justify-content: center;
 }
 
 .movie .poster img{

@@ -22,8 +22,8 @@
           <img src="img/willoflix.png" alt="Logo">
         </div>
         <div class="search">
+          <i class="fas fa-search c-white f-30" v-model="query" @click="search"></i>
           <input type="text" v-model="query" @keyup.enter="search" placeholder="Cerca il tuo film o la tu serie TV">
-          <button type="button" name="button" v-model="query" @click="search">Cerca!</button>
         </div>
       </div>
     </header>
@@ -31,36 +31,28 @@
     <main>
       <div class="all-movies">
         <div class="movie" v-for="oggetto in obj">
+          <!-- POSTER -->
           <div class="poster">
-          <img v-if="oggetto.poster_path === null" src="https://www.altavod.com/assets/images/poster-placeholder.png" alt="Locandina Film">
-          <img v-else :src="'https://image.tmdb.org/t/p/'+'w342'+ oggetto.poster_path" alt="Locandina Film">
+            <img v-if="oggetto.poster_path === null" src="https://www.altavod.com/assets/images/poster-placeholder.png" alt="Locandina Film">
+            <img v-else :src="'https://image.tmdb.org/t/p/'+'w342'+ oggetto.poster_path" alt="Locandina Film">
           </div>
-          <p class="f-20 bold">{{oggetto.title || oggetto.name}}</p>
-          <p class="f-15">{{oggetto.original_title || serie.original_name}}</h3>
-          <div class="language">
-          <img :src="'img/' + oggetto.original_language + '.png'" alt="language">
-          <!-- <h3>{{oggetto.original_language}}</h3> -->
+          <!-- CARD CON HOVER -->
+          <div class="card">
+            <p class="f-20"><strong>Titolo: </strong>{{oggetto.title || oggetto.name}}</p>
+            <p class="f-15"><strong>Titolo originale: </strong>{{oggetto.original_title || serie.original_name}}</h3>
+              <div class="language">
+                <span><strong>Lingua originale: </strong></span>
+                <img :src="'img/' + oggetto.original_language + '.png'" alt="language">
+              </div>
+              <!-- VOTO -->
+              <div class="star">
+                <span class="c-white"><strong>Voto:</strong></span>
+                <div class="star-full" v-for="stella in voto(oggetto.vote_average)"><i class="fas fa-star"></i></div>
+                <div class="star-empty" v-for="stella in 5-voto(oggetto.vote_average)"><i class="far fa-star"></i></div>
+              </div>
           </div>
-          <div class="star">
-            <div class="star-full" v-for="stella in voto(oggetto.vote_average)"><i class="fas fa-star"></i></div>
-            <div class="star-empty" v-for="stella in 5-voto(oggetto.vote_average)"><i class="far fa-star"></i></div>
-          </div>
-          <div class="prova"></div>
-          <!-- <h3>FILM</h3> -->
+
         </div>
-        <!-- <div class="movie" v-for="serie in tv">
-          <div class="poster">
-          <img v-if="serie.poster_path === null" src="https://www.altavod.com/assets/images/poster-placeholder.png" alt="Locandina Film">
-          <img v-else :src="'https://image.tmdb.org/t/p/'+'w342'+ serie.poster_path" alt="Locandina Tv">
-          </div>
-          <h2>{{serie.name}}</h2>
-          <h3>{{serie.original_name}}</h3>
-          <div class="language">
-          <img :src="'img/' + serie.original_language + '.png'" alt="language">
-          <h3>{{serie.original_language}}</h3>
-          </div>
-          <h3>SERIE TV</h3>
-        </div> -->
       </div>
     </main>
 
