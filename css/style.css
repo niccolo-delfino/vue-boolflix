@@ -104,6 +104,7 @@ header input{
 }
 
 .movie:hover .card{
+  height: 450px;
   display: block;
   cursor: pointer;
 }

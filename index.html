@@ -39,7 +39,7 @@
           <!-- CARD CON HOVER -->
           <div class="card">
             <p class="f-20"><strong>Titolo: </strong>{{oggetto.title || oggetto.name}}</p>
-            <p class="f-15"><strong>Titolo originale: </strong>{{oggetto.original_title || serie.original_name}}</h3>
+            <p class="f-15" v-if="oggetto.original_title != oggetto.title || oggetto.original_name != oggetto.name"><strong>Titolo originale: </strong>{{oggetto.original_title || serie.original_name}}</h3>
               <div class="language">
                 <span><strong>Lingua originale: </strong></span>
                 <img :src="'img/' + oggetto.original_language + '.png'" alt="language">
