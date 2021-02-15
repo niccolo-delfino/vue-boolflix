@@ -43,7 +43,11 @@ body{
 header {
     width: 100%;
     height: 90px;
-    background: #141414;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(14, 14, 14, 0.5);
+    z-index: 999;
 }
 
 header .container{
@@ -73,6 +77,12 @@ header i:hover{
 header input{
   width: 300px;
   height: 30px;
+}
+
+/* VIDEO */
+#video{
+  width: 100%;
+  height: 100vh;
 }
 
 /* MOVIES */

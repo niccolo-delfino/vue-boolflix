@@ -15,6 +15,8 @@ var app = new Vue({
     search(){
       this.searchFilm();
       this.searchTv();
+      this.playPause();
+      this.scroll()
     },
     searchFilm(){
       axios
@@ -84,6 +86,17 @@ var app = new Vue({
     },
     home(){
       this.obj.splice(0,this.obj.length);
+    },
+    playPause(){
+      var myVideo = document.getElementById("video");
+        if (myVideo.paused){
+          myVideo.play();
+        }else
+          myVideo.pause();
+    },
+    scroll() {
+      var elmnt = document.getElementById("qui");
+      elmnt.scrollIntoView();
     }
   }
 });

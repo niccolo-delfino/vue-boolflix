@@ -16,6 +16,11 @@
 <body>
 
   <div id="app">
+    <!-- VIDEO -->
+    <video autoplay id="video" @click="playPause">
+      <source src="video/trailer.mp4" type="video/mp4">
+    </video>
+
     <header class="up">
       <div class="container">
         <div class="logo" @click="home">
@@ -28,13 +33,9 @@
       </div>
     </header>
 
-    <main>
-      <!-- VIDEO -->
-      <!-- <video autoplay muted>
-        <source src="video/trailer.mp4" type="video/mp4">
-      </video> -->
+    <main id="qui">
 
-      <div class="all-movies">
+      <div class="all-movies" >
         <div class="movie" v-for="oggetto in obj">
           <!-- POSTER -->
           <div class="poster">
